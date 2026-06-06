@@ -24,6 +24,23 @@ An open-source Smart Home automation project that uses a Python voice assistant 
 > ⚠️ **Crucial Assembly Note:** Since both the servo plug and your jumper wires have **female** ends (holes), they cannot connect directly. You **must** insert small metal bridges (such as sewing pins, straight paperclips, or resistor legs) inside the holes to ensure a solid electrical connection. Without this, the servo will not receive power or signal!
 
 ---
+Felix is a bilingual assistant that understands both Polish and English commands. Here is the full list of supported actions:
+
+### 🌐 System & Web Commands
+* `wyszukaj [hasło]` / `search [query]` — Searches Google for the specified phrase.
+* `[adres].com` / `.pl` — Opens the requested website directly in your browser.
+* `ustawienia` / `settings` — Opens the Language and Search configuration panel.
+* `włącz/wyłącz AI` / `enable/disable AI` — Toggles the Artificial Intelligence core.
+* `wpisz` / `type` — Opens a text box to enter commands using the keyboard instead of voice.
+* `stwórz nowe polecenie` / `add command` — Launches the Custom Program Creator wizard.
+* `usuń komendę` / `remove command` — Deletes a previously saved custom program.
+* `status` — Displays current information about Felix's system condition.
+* `pomoc` / `help` — Displays the help window with this command list.
+* `koniec` / `exit` / `turn off` — Safely closes and shuts down the assistant.
+
+### 🏠 Smart Home Commands (Fizyczna Automatyzacja)
+* `włącz światło` / `turn on light` — Sends an HTTP request to the ESP8266 to rotate the servo to 180° (flips the light switch ON).
+* `wyłącz światło` / `turn off light` — Sends an HTTP request to the ESP8266 to rotate the servo to 0° (flips the light switch OFF).
 
 ## 💻 Software Setup
 
@@ -62,3 +79,4 @@ def steruj_swiatlem(akcja):
             requests.get(f"http://{ip_esp}/ON", timeout=2)
     except:
         mow("")
+
