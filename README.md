@@ -3,7 +3,7 @@ Smart home + ai helper
 # 🤖 Felix - Voice-Controlled Smart Light Switch
 
 An open-source Smart Home automation project that uses a Python voice assistant ("Felix") to trigger a physical light switch via an ESP8266 (NodeMCU) and an SG90 Servo motor over WiFi.
-
+Web: https://felix-bot-alpha-version.netlify.app/#demo
 ---
 
 ## 🛠️ Hardware Requirements & Wiring
