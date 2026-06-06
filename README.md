@@ -42,6 +42,27 @@ Felix is a bilingual assistant that understands both Polish and English commands
 * `włącz światło` / `turn on light` — Sends an HTTP request to the ESP8266 to rotate the servo to 180° (flips the light switch ON).
 * `wyłącz światło` / `turn off light` — Sends an HTTP request to the ESP8266 to rotate the servo to 0° (flips the light switch OFF).
 
+## 🔑 How to Get a Free Gemini API Key
+
+To use the AI features of Felix (the `enable AI` command), you need a Gemini API key. Follow these simple steps to get one for free:
+
+1. Go to the [Google AI Studio](https://aistudio.google.com/) website.
+2. Log in using your standard Google (Gmail) account.
+3. Click the prominent **"Get API key"** button (usually in the top left corner).
+4. Click **"Create API key"** and choose whether you want to bind it to an existing Google Cloud project or create a new one (select "Create API key in new project" if you are unsure).
+5. Copy your generated key string (it looks like a long mix of letters and numbers).
+
+### ⚠️ Security Warning for GitHub Users!
+> **NEVER hardcode your API key directly into your Python script** if you plan to upload your code to a public GitHub repository. Bots constantly scan GitHub for leaked keys, and Google will automatically deactivate your key within seconds if it gets exposed!
+
+### Safe implementation in Python:
+Instead of pasting the key directly into your code, save it as an environment variable or create a separate, ignored configuration file (e.g., `config.py`), and add it to your `.gitignore` file:
+
+```python
+# config.py (Keep this file private!)
+GEMINI_API_KEY = "your_actual_api_key_here"
+```
+
 ## 💻 Software Setup
 
 ### 1. Arduino IDE (ESP8266)
